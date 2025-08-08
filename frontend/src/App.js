@@ -10,7 +10,8 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Feedbacks from "./components/Feedbacks";
 import AboutPage from "./pages/AboutPage";
-import AuthModal from "./components/AuthModel"; // Fixed import name
+import AuthModal from "./components/AuthModel";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   const [authMode, setAuthMode] = useState(null); // "signin" or "register" or null
@@ -71,6 +72,7 @@ function App() {
             />
 
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
 
             <Route
               path="*"

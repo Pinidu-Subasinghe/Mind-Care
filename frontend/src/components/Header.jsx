@@ -57,18 +57,18 @@ export default function Header({ openAuthModal, token, onLogout }) {
           ) : (
             <>
               {/* Simple Profile Icon */}
-              <button
-                aria-label="Profile"
-                className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold"
-              >
-                U
-              </button>
+
               <button
                 onClick={onLogout}
                 className="px-4 py-2 text-sm font-semibold bg-red-600 text-white rounded-full hover:bg-red-700 transition"
               >
                 Logout
               </button>
+              <Link to="/profile" aria-label="Profile">
+                <button className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
+                  U
+                </button>
+              </Link>
             </>
           )}
         </div>
@@ -141,12 +141,6 @@ export default function Header({ openAuthModal, token, onLogout }) {
           ) : (
             <>
               <button
-                aria-label="Profile"
-                className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold"
-              >
-                U
-              </button>
-              <button
                 onClick={() => {
                   onLogout();
                   setIsOpen(false);
@@ -155,6 +149,11 @@ export default function Header({ openAuthModal, token, onLogout }) {
               >
                 Logout
               </button>
+              <Link to="/profile" aria-label="Profile">
+                <button className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
+                  U
+                </button>
+              </Link>
             </>
           )}
         </nav>
