@@ -1,0 +1,28 @@
+{
+  "name": "mind-care",
+  "version": "1.0.0",
+  "description": "MindCare is a secure, user-friendly web application designed to connect patients and mental health professionals.  \r It offers features like mood tracking, journaling, chat with therapists, and appointment scheduling — all with privacy and accessibility in mind.",
+  "main": "servers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon servers.js",
+    "dev": "nodemon servers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinidu2002/Mind-Care.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pinidu2002/Mind-Care/issues"
+  },
+  "homepage": "https://github.com/pinidu2002/Mind-Care#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1",
+    "nodemon": "^3.1.10"
+  }
+}
