@@ -177,6 +177,7 @@ export default function AuthModal({ mode, onClose, onLoginSuccess }) {
                       className="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
                     >
                       <option value="single">Single</option>
+                      <option value="relationship">On a Relationship</option>
                       <option value="married">Married</option>
                       <option value="divorced">Divorced</option>
                       <option value="other">Other</option>
@@ -207,7 +208,7 @@ export default function AuthModal({ mode, onClose, onLoginSuccess }) {
                 </label>
                 <input
                   type="password"
-                  placeholder="••••••••"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -223,7 +224,7 @@ export default function AuthModal({ mode, onClose, onLoginSuccess }) {
                   </label>
                   <input
                     type="password"
-                    placeholder="••••••••"
+                    placeholder="Confirm Password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
