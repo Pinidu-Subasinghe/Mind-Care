@@ -11,9 +11,9 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="font-sans scroll-smooth bg-green-50 min-h-screen pt-16">
+    <div className="font-sans scroll-smooth bg-green-50 min-h-screen pt-20">
       <Header />
-      <main className="space-y-24">
+      <main className="space-y-10"> {/* Reduced vertical spacing here */}
         <Section id="home">
           <Home />
         </Section>

@@ -1,16 +1,15 @@
-import React from "react";
-import LabImage from "../assets/lab.png"; // Replace with the actual image path
+import LabImage from "../assets/lab.png"; // adjust import accordingly
 
 export default function About() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-10">
       <img
         src={LabImage}
         alt="Mental Health Consultancy"
         className="max-h-[500px] w-auto max-w-full"
       />
 
-      <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10 text-center md:text-left">
+      <div className="w-full md:w-1/2 text-center md:text-left">
         <p className="text-sm text-black font-semibold mb-2 uppercase tracking-wide">
           About Us
         </p>
@@ -26,11 +25,11 @@ export default function About() {
         </p>
         <a
           href="#"
-          className="inline-block bg-[#E3774D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#D36139] transition-colors"
+          className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors"
         >
           See detail
         </a>
       </div>
-    </section>
+    </div>
   );
 }
