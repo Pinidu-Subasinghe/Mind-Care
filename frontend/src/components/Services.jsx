@@ -4,25 +4,25 @@ export default function Services() {
   const services = [
     {
       title: "Mental Counseling",
-      desc: "Personalized sessions to support your mental health needs.",
+      desc: "Personalized one-on-one sessions with experienced counselors to help you navigate challenges, manage stress, and achieve emotional balance.",
       img: "https://www.pngmart.com/files/21/Counseling-PNG-Picture.png",
       alt: "Mental Counseling Illustration",
     },
     {
       title: "Therapy Sessions",
-      desc: "Professional therapy to help you cope and grow.",
+      desc: "Evidence-based therapy programs tailored to your needs, whether you’re working through anxiety, depression, trauma, or personal growth goals.",
       img: "https://www.picktime.com/webassets/2021/img/business/cover-img/counseling-cover.png",
       alt: "Therapy Sessions Illustration",
     },
     {
       title: "Support Groups",
-      desc: "Connect with others in a safe and supportive space.",
+      desc: "Safe, judgment-free spaces where you can share experiences, gain understanding, and connect with others who truly relate to your journey.",
       img: "https://cdni.iconscout.com/illustration/premium/thumb/women-social-support-group-3744084-3128037.png",
       alt: "Support Groups Illustration",
     },
     {
       title: "Case Management",
-      desc: "Coordinated care to address all your health concerns.",
+      desc: "Coordinated mental health and wellness planning to ensure you receive comprehensive, ongoing support for every aspect of your well-being.",
       img: "https://png.pngtree.com/png-vector/20221019/ourmid/pngtree-patient-waiting-medical-test-result-in-hospital-png-image_6327925.png",
       alt: "Case Management Illustration",
     },
@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <section
       className="max-w-7xl mx-auto px-6 py-16"
-      style={{ marginTop: 0 }} // block global 40px margin here
+      style={{ marginTop: 0 }}
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-10">
         {/* Left side */}
@@ -46,7 +46,9 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-gray-700 text-lg">
-            Explore the range of mental health services we offer to support your journey to wellness.
+            At <strong>Mind Care</strong>, we believe mental well-being is just as important as physical health. 
+            Our services are designed to guide you through every stage of your journey — from immediate emotional support to long-term personal growth. 
+            Whether you need professional counseling, structured therapy, group connection, or coordinated care, we’re here to provide compassionate, expert guidance every step of the way.
           </p>
         </div>
 

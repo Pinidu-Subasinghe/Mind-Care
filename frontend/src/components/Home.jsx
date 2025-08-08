@@ -70,7 +70,7 @@ export default function Home() {
       <div className="md:w-1/2 flex flex-col justify-center gap-6">
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight font-sans text-gray-900">
           Healthy Minds, Happy Lives{" "}
-          <span className="text-[#EC744A]">Mental Health</span> Consultancy
+          <span className="text-green-600">Mental Health</span> Consultancy
         </h1>
         <p className="text-gray-700 max-w-md">
           Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing
