@@ -39,7 +39,7 @@ function App() {
 
   return (
     <Router>
-      <div className="font-sans scroll-smooth bg-green-50 min-h-screen pt-20">
+      <div className="font-sans scroll-smooth bg-green-50 min-h-screen pt-10">
         <Header
           openAuthModal={setAuthMode}
           token={token}          // Pass token, not isLoggedIn
