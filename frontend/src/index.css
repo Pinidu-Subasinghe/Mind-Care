@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Hide native placeholder text for empty date inputs */
+input[type="date"]:not(:focus):invalid::-webkit-datetime-edit {
+  color: transparent;
+}
