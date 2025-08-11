@@ -14,6 +14,7 @@ import AuthModal from "./components/AuthModel";
 import UserProfile from "./pages/UserProfile";
 import Services2 from "./pages/Services";
 import Therapists from "./pages/Therapists";
+import Appointment from "./pages/Appointment";
 
 function App() {
   const [authMode, setAuthMode] = useState(null); // "signin" or "register" or null
@@ -44,7 +45,7 @@ function App() {
       <div className="font-sans scroll-smooth bg-green-50 min-h-screen pt-10">
         <Header
           openAuthModal={setAuthMode}
-          token={token}          // Pass token, not isLoggedIn
+          token={token} // Pass token, not isLoggedIn
           onLogout={handleLogout}
         />
 
@@ -74,9 +75,13 @@ function App() {
             />
 
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
+            <Route
+              path="/profile"
+              element={<UserProfile token={token} onLogout={handleLogout} />}
+            />
             <Route path="/services" element={<Services2 />} />
             <Route path="/therapists" element={<Therapists />} />
+            <Route path="/appointment/:therapistId" element={<Appointment />} />
 
             {/* Auth routes */}
 

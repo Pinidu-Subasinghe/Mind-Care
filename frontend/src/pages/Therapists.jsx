@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Search, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const useInView = (threshold = 0.12) => {
   const ref = useRef();
@@ -24,8 +25,7 @@ const therapistsData = [
     name: "Dr. Aisha Perera",
     title: "Clinical Psychologist",
     specialties: ["Counseling", "Anxiety", "Depression"],
-    bio:
-      "Dr. Aisha uses integrative approaches combining CBT and mindfulness to help clients build coping skills and resilience.",
+    bio: "Dr. Aisha uses integrative approaches combining CBT and mindfulness to help clients build coping skills and resilience.",
     image:
       "https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b7e2c4fd9c4f9a6f7d9aaad7f9b883b",
     rating: 4.9,
@@ -36,11 +36,9 @@ const therapistsData = [
     id: "t2",
     name: "Mr. Sunil Fernando",
     title: "Counselor",
-    specialties: ["Counseling", "Stress Management", "Career"],
-    bio:
-      "Sunil focuses on practical strategies for stress, work-life balance and career transitions, offering supportive one-on-one sessions.",
-    image:
-      "https://randomuser.me/api/portraits/men/45.jpg",
+    specialties: ["Counseling","Career", "Stress Management"],
+    bio: "Sunil focuses on practical strategies for stress, work-life balance and career transitions, offering supportive one-on-one sessions.",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
     rating: 4.7,
     years: 6,
     price: 20,
@@ -50,8 +48,7 @@ const therapistsData = [
     name: "Ms. Nadiya Silva",
     title: "CBT Therapist",
     specialties: ["Therapy", "CBT", "Anxiety"],
-    bio:
-      "Nadiya specializes in Cognitive Behavioral Therapy with structured programs tailored to each client’s goals.",
+    bio: "Nadiya specializes in Cognitive Behavioral Therapy with structured programs tailored to each client’s goals.",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f0eaaf152d6f8f6b9b0db8f6a2c2b3d",
     rating: 4.8,
@@ -63,10 +60,8 @@ const therapistsData = [
     name: "Dr. Kavita Jayawardena",
     title: "Group Facilitator",
     specialties: ["Support Groups", "Grief", "Community"],
-    bio:
-      "Kavita runs therapeutic support groups and workshops focused on grief, peer support and social reconnection.",
-    image:
-      "https://randomuser.me/api/portraits/women/68.jpg",
+    bio: "Kavita runs therapeutic support groups and workshops focused on grief, peer support and social reconnection.",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
     rating: 4.85,
     years: 10,
     price: 25,
@@ -76,8 +71,7 @@ const therapistsData = [
     name: "Mr. Rohan de Silva",
     title: "Mindfulness Coach",
     specialties: ["Workshops", "Mindfulness", "Meditation"],
-    bio:
-      "Rohan leads practical mindfulness workshops blending breathing, movement and psychoeducation for everyday mental health.",
+    bio: "Rohan leads practical mindfulness workshops blending breathing, movement and psychoeducation for everyday mental health.",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a9b0d3b6a765c9c6b5b2a6b6a7b9c3e",
     rating: 4.6,
@@ -93,7 +87,13 @@ export default function Therapists({ openAuthModal, token, onBook }) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [selected, setSelected] = useState(null); // therapist selected for modal
-  const categories = ["All", "Counseling", "Therapy", "Workshops", "Support Groups"];
+  const categories = [
+    "All",
+    "Counseling",
+    "Therapy",
+    "Workshops",
+    "Support Groups",
+  ];
 
   const lower = (s) => (s || "").toLowerCase();
 
@@ -125,7 +125,9 @@ export default function Therapists({ openAuthModal, token, onBook }) {
     if (onBook) onBook(therapistId);
     else {
       // fallback: just alert (replace with actual booking flow)
-      alert("Booking flow not implemented. Received therapist id: " + therapistId);
+      alert(
+        "Booking flow not implemented. Received therapist id: " + therapistId
+      );
     }
   };
 
@@ -145,7 +147,8 @@ export default function Therapists({ openAuthModal, token, onBook }) {
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Licensed professionals and facilitators available for counseling,
-          evidence-based therapy, and community workshops. Use search and filters to find the right match.
+          evidence-based therapy, and community workshops. Use search and
+          filters to find the right match.
         </p>
       </div>
 
@@ -195,16 +198,22 @@ export default function Therapists({ openAuthModal, token, onBook }) {
                 <div>
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-800">{t.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-800">
+                        {t.name}
+                      </h3>
                       <p className="text-sm text-gray-500">{t.title}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-semibold text-green-600">{t.rating}★</div>
+                      <div className="text-sm font-semibold text-green-600">
+                        {t.rating}★
+                      </div>
                       <div className="text-xs text-gray-400">{t.years} yrs</div>
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-600 mt-3 mb-4 line-clamp-3">{t.bio}</p>
+                  <p className="text-sm text-gray-600 mt-3 mb-4 line-clamp-3">
+                    {t.bio}
+                  </p>
                 </div>
 
                 <div className="flex items-center justify-between gap-4">
@@ -228,19 +237,20 @@ export default function Therapists({ openAuthModal, token, onBook }) {
                       View
                     </button>
 
-                    <button
-                      onClick={() => handleBook(t.id)}
-                      className="px-4 py-2 rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white text-sm font-semibold hover:scale-105 transform transition"
-                    >
-                      Book
-                    </button>
+                    <Link to={`/appointment/${t.id}`}>
+                      <button className="px-4 py-2 rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white text-sm font-semibold hover:scale-105 transform transition">
+                        Book
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </article>
           ))
         ) : (
-          <p className="text-gray-500 col-span-full text-center">No therapists found.</p>
+          <p className="text-gray-500 col-span-full text-center">
+            No therapists found.
+          </p>
         )}
       </div>
 
@@ -268,11 +278,17 @@ export default function Therapists({ openAuthModal, token, onBook }) {
               <div className="p-6 w-2/3">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h2 className="text-2xl font-semibold text-gray-800">{selected.name}</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800">
+                      {selected.name}
+                    </h2>
                     <p className="text-sm text-gray-500">{selected.title}</p>
                     <div className="mt-3 flex items-center gap-3">
-                      <div className="text-sm font-semibold text-green-600">{selected.rating}★</div>
-                      <div className="text-xs text-gray-400">{selected.years} years experience</div>
+                      <div className="text-sm font-semibold text-green-600">
+                        {selected.rating}★
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        {selected.years} years experience
+                      </div>
                     </div>
                   </div>
 
@@ -301,20 +317,12 @@ export default function Therapists({ openAuthModal, token, onBook }) {
                 <div className="mt-6 flex items-center gap-4">
                   <div>
                     <div className="text-sm text-gray-500">Session Price</div>
-                    <div className="text-lg font-semibold text-gray-800">${selected.price} USD</div>
+                    <div className="text-lg font-semibold text-gray-800">
+                      ${selected.price} USD
+                    </div>
                   </div>
 
                   <div className="ml-auto flex items-center gap-2">
-                    <button
-                      onClick={() => {
-                        setSelected(null);
-                        handleBook(selected.id);
-                      }}
-                      className="px-5 py-2 rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold hover:scale-105 transition"
-                    >
-                      Book Session
-                    </button>
-
                     <button
                       onClick={() => {
                         // maybe go to full profile page
