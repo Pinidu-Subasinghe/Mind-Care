@@ -99,7 +99,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Animated background elements */}
       <FloatingShape delay={0} className="top-20 left-10 opacity-20">
         <div className="w-32 h-32 bg-gradient-to-r from-green-200 to-green-300 rounded-full blur-xl"></div>

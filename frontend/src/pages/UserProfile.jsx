@@ -510,7 +510,7 @@ export default function ModernProfilePage({ token, onLogout }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading profile...</p>
@@ -520,10 +520,10 @@ export default function ModernProfilePage({ token, onLogout }) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-64 bg-white shadow-lg min-h-screen">
+        <div className="w-64 bg-white shadow-lg">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
@@ -561,15 +561,6 @@ export default function ModernProfilePage({ token, onLogout }) {
               })}
             </ul>
           </nav>
-
-          <div className="absolute bottom-6 left-4 right-4">
-            <button
-              onClick={onLogout}
-              className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors text-left"
-            >
-              Sign Out
-            </button>
-          </div>
         </div>
 
         {/* Main Content */}
