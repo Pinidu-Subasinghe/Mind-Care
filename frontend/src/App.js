@@ -13,6 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import AuthModal from "./components/AuthModel";
 import UserProfile from "./pages/UserProfile";
 import Services2 from "./pages/Services";
+import Therapists from "./pages/Therapists";
 
 function App() {
   const [authMode, setAuthMode] = useState(null); // "signin" or "register" or null
@@ -75,6 +76,9 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
             <Route path="/services" element={<Services2 />} />
+            <Route path="/therapists" element={<Therapists />} />
+
+            {/* Auth routes */}
 
             <Route
               path="*"
