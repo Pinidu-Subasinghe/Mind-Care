@@ -5,13 +5,27 @@ export default function Header({ openAuthModal, token, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const links = [
+  // Guest navigation
+  const guestLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Therapists", href: "/therapists" },
+    { name: "Resources", href: "/resources" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Contact", href: "/contact" },
     { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  // Logged-in user navigation
+  const userLinks = [
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "My Sessions", href: "/my-sessions" },
+    { name: "Messages", href: "/messages" },
+    { name: "Community", href: "/community" },
+    { name: "Resources", href: "/resources" },
+  ];
+
+  const navLinks = token ? userLinks : guestLinks;
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
@@ -26,7 +40,7 @@ export default function Header({ openAuthModal, token, onLogout }) {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 font-medium text-gray-700">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
@@ -37,7 +51,7 @@ export default function Header({ openAuthModal, token, onLogout }) {
           ))}
         </nav>
 
-        {/* Desktop Auth Buttons or Profile/Logout */}
+        {/* Desktop Auth / User */}
         <div className="hidden md:flex items-center space-x-4">
           {!token ? (
             <>
@@ -56,8 +70,6 @@ export default function Header({ openAuthModal, token, onLogout }) {
             </>
           ) : (
             <>
-              {/* Simple Profile Icon */}
-
               <button
                 onClick={onLogout}
                 className="px-4 py-2 text-sm font-semibold bg-red-600 text-white rounded-full hover:bg-red-700 transition"
@@ -106,7 +118,7 @@ export default function Header({ openAuthModal, token, onLogout }) {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="md:hidden bg-white shadow-md py-4 flex flex-col items-center space-y-4 font-medium text-gray-700">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}

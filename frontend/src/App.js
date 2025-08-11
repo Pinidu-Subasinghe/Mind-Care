@@ -12,6 +12,7 @@ import Feedbacks from "./components/Feedbacks";
 import AboutPage from "./pages/AboutPage";
 import AuthModal from "./components/AuthModel";
 import UserProfile from "./pages/UserProfile";
+import Services2 from "./pages/Services";
 
 function App() {
   const [authMode, setAuthMode] = useState(null); // "signin" or "register" or null
@@ -73,6 +74,7 @@ function App() {
 
             <Route path="/about" element={<AboutPage />} />
             <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
+            <Route path="/services" element={<Services2 />} />
 
             <Route
               path="*"
