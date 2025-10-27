@@ -19,12 +19,15 @@ import Appointment from "./pages/Appointment";
 function App() {
   const [authMode, setAuthMode] = useState(null); // "signin" or "register" or null
   const [token, setToken] = useState(null);
+  const [userName, setUserName] = useState(null);
 
   // Check if user is logged in on app load
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
+    const storedName = localStorage.getItem("userName");
     if (storedToken) {
       setToken(storedToken);
+      if (storedName) setUserName(storedName);
     }
   }, []);
 
@@ -37,7 +40,9 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userName");
     setToken(null);
+    setUserName(null);
   };
 
   return (
@@ -47,6 +52,7 @@ function App() {
           openAuthModal={setAuthMode}
           token={token} // Pass token, not isLoggedIn
           onLogout={handleLogout}
+          userName={userName}
         />
 
         <main className="space-y-10 pt-16">

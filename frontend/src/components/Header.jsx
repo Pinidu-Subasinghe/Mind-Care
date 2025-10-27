@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header({ openAuthModal, token, onLogout }) {
+export default function Header({ openAuthModal, token, onLogout, userName }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -10,21 +10,18 @@ export default function Header({ openAuthModal, token, onLogout }) {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Therapists", href: "/therapists" },
-    { name: "Resources", href: "/resources" },
-    { name: "Pricing", href: "/pricing" },
     { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
   ];
 
   // Logged-in user navigation
   const userLinks = [
     { name: "Dashboard", href: "/dashboard" },
-    { name: "My Sessions", href: "/my-sessions" },
-    { name: "Messages", href: "/messages" },
+    { name: "Services", href: "/services" },
+    { name: "Therapists", href: "/therapists" },
     { name: "Community", href: "/community" },
-    { name: "Resources", href: "/resources" },
+    { name: "About", href: "/about" },
   ];
-
+ 
   const navLinks = token ? userLinks : guestLinks;
 
   return (
@@ -78,7 +75,7 @@ export default function Header({ openAuthModal, token, onLogout }) {
               </button>
               <Link to="/profile" aria-label="Profile">
                 <button className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
-                  U
+                  {getInitials(userName)}
                 </button>
               </Link>
             </>
@@ -163,7 +160,7 @@ export default function Header({ openAuthModal, token, onLogout }) {
               </button>
               <Link to="/profile" aria-label="Profile">
                 <button className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
-                  U
+                  {getInitials(userName)}
                 </button>
               </Link>
             </>
@@ -172,4 +169,12 @@ export default function Header({ openAuthModal, token, onLogout }) {
       )}
     </header>
   );
+}
+
+// Helper to build initials (first letter of first and last name). Falls back to 'U'.
+function getInitials(name) {
+  if (!name || typeof name !== "string") return "U";
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
